@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+      - actions/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build app using Oryx
+      uses: Azure/appservice-build@v2-beta
+      with:
+        source-directory: sampleApps/node/angularsample
+        platform: nodejs
+        platform-version: 12
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: v2beta-node-sampleapp
+        publish-profile: ${{ secrets.v2betaNodeSampleApp }}
+        package: sampleApps/node/angularsample

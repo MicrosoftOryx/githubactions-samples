@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+      - actions/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build app using Oryx
+      uses: Azure/appservice-build@v2-beta
+      with:
+        source-directory: sampleApps/python/django-app
+        platform: python
+        platform-version: 3.7
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: v2beta-python-sampleapp
+        publish-profile: ${{ secrets.v2betaPythonSampleApp }}
+        package: sampleApps/python/django-app

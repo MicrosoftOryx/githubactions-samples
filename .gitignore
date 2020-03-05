@@ -252,21 +252,3 @@ paket-files/
 
 # Python cache
 *.pyc
-
-# Node and .NET Core runtime Dockerfiles, that are auto generated
-images/runtime/node/*/Dockerfile
-images/runtime/dotnetcore/*/Dockerfile
-images/runtime/python/*.*/
-images/runtime/php/*.*/Dockerfile
-images/runtime/php-fpm/*.*/Dockerfile
-
-# Go packages from GitHub
-src/startupscriptgenerator/bin/
-src/startupscriptgenerator/src/github.com/
-src/startupscriptgenerator/pkg/
-src/startupscriptgenerator/**/vendor/
-
-# Go debugging related generated files
-src/startupscriptgenerator/src/**/__debug_bin
-src/startupscriptgenerator/src/**/run.sh
-!**/dynamic/Dockerfile

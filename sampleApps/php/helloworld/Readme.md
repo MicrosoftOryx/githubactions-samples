@@ -1,2 +1,4 @@
-The source of this sample was https://github.com/frob/greetings.
-I modified this to accomodate my scenario.
+# greetings
+This is a repo for hello world stuff.
+
+This is the composer branch.

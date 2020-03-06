@@ -9,8 +9,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app using Oryx v2-beta version
-      uses: Azure/appservice-build@v2-beta
+    - name: Build app using Oryx v1 version
+      uses: Azure/appservice-build@v1
       with:
         source-directory: sampleApps/node/angularsample
         platform: nodejs
@@ -19,6 +19,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
-        app-name: v2beta-node-sampleapp
-        publish-profile: ${{ secrets.v2betaNodeSampleApp }}
+        app-name: v1-node-sampleapp
+        publish-profile: ${{ secrets.v1NodeSampleApp }}
         package: sampleApps/node/angularsample

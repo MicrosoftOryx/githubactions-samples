@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+      - actions/**
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build app using Oryx v1 version
+      uses: Azure/appservice-build@v1
+      with:
+        source-directory: sampleApps/dotNetCore/NetCoreApp31.MvcApp
+        platform: dotnet
+        platform-version: 3.1
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: v1-dotnetcore-sampleapp
+        publish-profile: ${{ secrets.v1DotNetCoreSampleApp }}
+        package: sampleApps/dotNetCore/NetCoreApp31.MvcApp

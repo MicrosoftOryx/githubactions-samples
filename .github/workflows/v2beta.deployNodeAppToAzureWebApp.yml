@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app using Oryx
+    - name: Build app using Oryx v2-beta version
       uses: Azure/appservice-build@v2-beta
       with:
         source-directory: sampleApps/node/angularsample

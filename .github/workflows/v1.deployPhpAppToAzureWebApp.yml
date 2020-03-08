@@ -1,5 +1,9 @@
+name: V1_BuildAndDeploy_PhpApp_ToAzureWebApp
+
 on:
   push:
+    paths:
+      - sampleApps/php/**
     branches:
       - master
       - actions/**

@@ -1,8 +1,13 @@
+name: V2Beta_BuildAndDeploy_PythonApp_ToAzureWebApp
+
 on:
   push:
+    paths:
+      - sampleApps/python/**
     branches:
       - master
       - actions/**
+    
 jobs:
   build:
     runs-on: ubuntu-latest

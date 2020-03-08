@@ -1,5 +1,9 @@
+name: V1_BuildAndDeploy_PythonApp_ToAzureWebApp
+
 on:
   push:
+    paths:
+      - sampleApps/python/**
     branches:
       - master
       - actions/**

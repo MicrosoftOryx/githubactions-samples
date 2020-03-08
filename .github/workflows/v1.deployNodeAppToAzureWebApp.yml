@@ -1,5 +1,9 @@
+name: V1_BuildAndDeploy_NodeApp_ToAzureWebApp
+
 on:
   push:
+    paths:
+      - sampleApps/node/**
     branches:
       - master
       - actions/**

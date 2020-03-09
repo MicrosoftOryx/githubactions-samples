@@ -5,7 +5,7 @@ on:
     paths:
       - sampleApps/dotNetCore/**
       - '!.github/workflows/**'
-      - '.github/workflows/v2beta.deployDotNetCoreAppToAzureWebApp.yml'
+      - '.github/workflows/v1.deployDotNetCoreAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

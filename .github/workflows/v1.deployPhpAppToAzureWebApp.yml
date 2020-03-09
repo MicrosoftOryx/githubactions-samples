@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - sampleApps/php/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v1.deployPhpAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - sampleApps/python/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v1.deployPythonAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

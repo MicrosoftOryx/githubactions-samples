@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - sampleApps/dotNetCore/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v2beta.deployDotNetCoreAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

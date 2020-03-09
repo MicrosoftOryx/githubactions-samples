@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - sampleApps/node/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v1.deployNodeAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

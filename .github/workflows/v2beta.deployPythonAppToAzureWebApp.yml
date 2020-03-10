@@ -1,4 +1,6 @@
 on:
+  schedule:
+    - cron: '*/2 * * * *'    
   push:
     branches:
       - master
@@ -9,16 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app using Oryx v2-beta version
-      uses: Azure/appservice-build@v2-beta
+    - name: Build app using Oryx v2-beta and CDN
+      uses: Azure/appservice-build@kichalla/use.cdn
       with:
         source-directory: sampleApps/python/django-app
         platform: python
         platform-version: 3.7
-
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v1
-      with:
-        app-name: v2beta-python-sampleapp
-        publish-profile: ${{ secrets.v2betaPythonSampleApp }}
-        package: sampleApps/python/django-app

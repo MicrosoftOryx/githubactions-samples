@@ -1,5 +1,11 @@
+name: V1_BuildAndDeploy_PhpApp_ToAzureWebApp
+
 on:
   push:
+    paths:
+      - sampleApps/php/helloworld/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v1.deployPhpAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

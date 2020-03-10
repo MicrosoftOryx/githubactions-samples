@@ -1,5 +1,11 @@
+name: V1_BuildAndDeploy_AspNetCoreApp_ToAzureWebApp
+
 on:
   push:
+    paths:
+      - sampleApps/dotNetCore/NetCoreApp31.MvcApp/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v1.deployDotNetCoreAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**

@@ -3,7 +3,7 @@ name: V1_BuildAndDeploy_NodeApp_ToAzureWebApp
 on:
   push:
     paths:
-      - sampleApps/node/**
+      - sampleApps/node/angularsample/**
       - '!.github/workflows/**'
       - '.github/workflows/v1.deployNodeAppToAzureWebApp.yml'
     branches:

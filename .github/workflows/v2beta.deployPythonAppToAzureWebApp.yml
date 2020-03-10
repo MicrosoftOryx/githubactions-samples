@@ -3,7 +3,7 @@ name: V2Beta_BuildAndDeploy_PythonApp_ToAzureWebApp
 on:
   push:
     paths:
-      - sampleApps/python/**
+      - sampleApps/python/django-app/**
       - '!.github/workflows/**'
       - '.github/workflows/v2beta.deployPythonAppToAzureWebApp.yml'
     branches:

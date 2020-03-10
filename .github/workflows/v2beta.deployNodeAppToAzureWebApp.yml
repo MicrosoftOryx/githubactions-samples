@@ -3,7 +3,7 @@ name: V2Beta_BuildAndDeploy_NodeApp_ToAzureWebApp
 on:
   push:
     paths:
-      - sampleApps/node/**
+      - sampleApps/node/angularsample/**
       - '!.github/workflows/**'
       - '.github/workflows/v2beta.deployNodeAppToAzureWebApp.yml'
     branches:

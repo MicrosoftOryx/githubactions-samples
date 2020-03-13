@@ -1,11 +1,11 @@
-name: V1_BuildAndDeploy_AspNetCoreApp_ToAzureWebApp
+name: V2Beta_BuildAndDeploy_AspNetCoreApp_ToAzureWebApp
 
 on:
   push:
     paths:
       - sampleApps/dotNetCore/NetCoreApp31.MvcApp/**
       - '!.github/workflows/**'
-      - '.github/workflows/v1.deployDotNetCoreAppToAzureWebApp.yml'
+      - '.github/workflows/v2beta.deployDotNetCoreAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**
@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build app using Oryx v1 version
-      uses: Azure/appservice-build@v1
+      uses: Azure/appservice-build@kichalla/v2-beta
       with:
         source-directory: sampleApps/dotNetCore/NetCoreApp31.MvcApp
         platform: dotnet

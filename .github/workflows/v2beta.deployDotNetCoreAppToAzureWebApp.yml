@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app using Oryx v1 version
+    - name: Build app using Oryx v2-beta version
       uses: Azure/appservice-build@kichalla/v2-beta
       with:
         source-directory: sampleApps/dotNetCore/NetCoreApp31.MvcApp
@@ -26,6 +26,6 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
-        app-name: v1-dotnetcore-sampleapp
-        publish-profile: ${{ secrets.v1DotNetCoreSampleApp }}
+        app-name: v2beta-dotnetcore-sampleapp
+        publish-profile: ${{ secrets.v2betaDotNetCoreSampleApp }}
         package: sampleApps/dotNetCore/NetCoreApp31.MvcApp/output

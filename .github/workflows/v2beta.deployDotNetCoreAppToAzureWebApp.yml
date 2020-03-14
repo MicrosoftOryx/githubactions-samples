@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build app using Oryx v2-beta version
-      uses: Azure/appservice-build@kichalla/v2-beta
+      uses: Azure/appservice-build@v2-beta
       with:
         source-directory: sampleApps/dotNetCore/NetCoreApp31.MvcApp
         platform: dotnet

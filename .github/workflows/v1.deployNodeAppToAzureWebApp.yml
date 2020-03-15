@@ -3,7 +3,7 @@ name: V1_BuildAndDeploy_NodeApp_ToAzureWebApp
 on:
   push:
     paths:
-      - sampleApps/node/angularsample/**
+      - sampleApps/node/webfrontend/**
       - '!.github/workflows/**'
       - '.github/workflows/v1.deployNodeAppToAzureWebApp.yml'
     branches:
@@ -18,7 +18,7 @@ jobs:
     - name: Build app using Oryx v1 version
       uses: Azure/appservice-build@v1
       with:
-        source-directory: sampleApps/node/angularsample
+        source-directory: sampleApps/node/webfrontend
         platform: nodejs
         platform-version: 12
 
@@ -27,4 +27,4 @@ jobs:
       with:
         app-name: v1-node-sampleapp
         publish-profile: ${{ secrets.v1NodeSampleApp }}
-        package: sampleApps/node/angularsample
+        package: sampleApps/node/webfrontend

@@ -3,7 +3,7 @@ name: V1_BuildAndDeploy_PhpApp_ToAzureWebApp
 on:
   push:
     paths:
-      - sampleApps/php/helloworld/**
+      - sampleApps/php/twig-example/**
       - '!.github/workflows/**'
       - '.github/workflows/v1.deployPhpAppToAzureWebApp.yml'
     branches:
@@ -18,7 +18,7 @@ jobs:
     - name: Build app using Oryx v1 version
       uses: Azure/appservice-build@v1
       with:
-        source-directory: sampleApps/php/helloworld
+        source-directory: sampleApps/php/twig-example
         platform: php
         platform-version: 7.3
 
@@ -27,4 +27,4 @@ jobs:
       with:
         app-name: v1-python-sampleapp
         publish-profile: ${{ secrets.v1PhpSampleApp }}
-        package: sampleApps/php/helloworld
+        package: sampleApps/php/twig-example

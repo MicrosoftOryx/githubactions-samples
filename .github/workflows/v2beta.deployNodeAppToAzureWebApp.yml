@@ -3,7 +3,7 @@ name: V2Beta_BuildAndDeploy_NodeApp_ToAzureWebApp
 on:
   push:
     paths:
-      - sampleApps/node/angularsample/**
+      - sampleApps/node/webfrontend/**
       - '!.github/workflows/**'
       - '.github/workflows/v2beta.deployNodeAppToAzureWebApp.yml'
     branches:
@@ -18,7 +18,7 @@ jobs:
     - name: Build app using Oryx v2-beta version
       uses: Azure/appservice-build@v2-beta
       with:
-        source-directory: sampleApps/node/angularsample
+        source-directory: sampleApps/node/webfrontend
         platform: nodejs
         platform-version: 12
 
@@ -27,4 +27,4 @@ jobs:
       with:
         app-name: v2beta-node-sampleapp
         publish-profile: ${{ secrets.v2betaNodeSampleApp }}
-        package: sampleApps/node/angularsample
+        package: sampleApps/node/webfrontend

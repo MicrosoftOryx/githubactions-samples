@@ -1,6 +1,7 @@
 name: V2Beta_BuildAndDeploy_AspNetCoreApp_ToAzureWebApp
 
 on:
+  repository_dispatch:
   push:
     paths:
       - sampleApps/dotNetCore/NetCoreApp31.MvcApp/**

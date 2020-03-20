@@ -1,6 +1,7 @@
 name: V1_BuildAndDeploy_PythonApp_ToAzureWebApp
 
 on:
+  repository_dispatch:
   push:
     paths:
       - sampleApps/python/django-app/**

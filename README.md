@@ -9,3 +9,14 @@ A repo for testing GitHub actions created by the [Oryx](https://github.com/micro
 | v2-beta | Python - Django | [`Source Code`](sampleApps/python/django-app), [`Workflow File`](.github/workflows/v2beta.deployPythonAppToAzureWebApp.yml), [Runs](https://github.com/MicrosoftOryx/githubactions-samples/actions?query=workflow%3A.github%2Fworkflows%2Fv2beta.deployPythonAppToAzureWebApp.yml), [Live Site](http://v2beta-python-sampleapp.azurewebsites.net/uservoice/) |
 | v2-beta | Node - Hello World | [`Source Code`](sampleApps/node/webfrontend), [`Workflow File`](.github/workflows/v2beta.deployNodeAppToAzureWebApp.yml), [Runs](https://github.com/MicrosoftOryx/githubactions-samples/actions?query=workflow%3A.github%2Fworkflows%2Fv2beta.deployNodeAppToAzureWebApp.yml), [Live Site](http://v2beta-node-sampleapp.azurewebsites.net/) |
 | v2-beta | ASP.NET Core MVC | [`Source Code`](sampleApps/dotNetCore/NetCoreApp31.MvcApp), [`Workflow File`](.github/workflows/v2beta.deployDotNetCoreAppToAzureWebApp.yml), [Runs](https://github.com/MicrosoftOryx/githubactions-samples/actions?query=workflow%3A.github%2Fworkflows%2Fv2beta.deployDotNetCoreAppToAzureWebApp.yml), [Live Site](http://v2beta-dotnetcore-sampleapp.azurewebsites.net/) |
+
+
+#### To deploy and build sample apps on-demand
+The command that used for kicking off a build:
+
+```
+curl -X POST https://api.github.com/repos/MicrosoftOryx/githubactions-samples/dispatches \
+-H 'Accept: application/vnd.github.everest-preview+json' \
+-H 'Authorization: token ${{secrets.REPO_ACCESS_TOKEN}}' \
+--data '{"event_type": "build_application"}'
+```

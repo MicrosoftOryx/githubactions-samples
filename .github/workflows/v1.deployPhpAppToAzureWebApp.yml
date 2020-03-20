@@ -1,6 +1,7 @@
 name: V1_BuildAndDeploy_PhpApp_ToAzureWebApp
 
 on:
+  repository_dispatch:
   push:
     paths:
       - sampleApps/php/twig-example/**

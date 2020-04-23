@@ -1,4 +1,4 @@
-name: V2Beta_BuildAndDeploy_NodeApp_ToAzureWebApp
+name: V2_BuildAndDeploy_NodeApp_ToAzureWebApp
 
 on:
   repository_dispatch:
@@ -6,7 +6,7 @@ on:
     paths:
       - sampleApps/node/webfrontend/**
       - '!.github/workflows/**'
-      - '.github/workflows/v2beta.deployNodeAppToAzureWebApp.yml'
+      - '.github/workflows/v2.deployNodeAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**
@@ -16,8 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app using Oryx v2-beta version
-      uses: Azure/appservice-build@v2-beta
+    - name: Build app using Oryx v2 version
+      uses: Azure/appservice-build@v2
       with:
         source-directory: sampleApps/node/webfrontend
         platform: nodejs

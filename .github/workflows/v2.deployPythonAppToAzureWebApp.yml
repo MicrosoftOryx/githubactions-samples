@@ -1,4 +1,4 @@
-name: V2Beta_BuildAndDeploy_PythonApp_ToAzureWebApp
+name: V2_BuildAndDeploy_PythonApp_ToAzureWebApp
 
 on:
   repository_dispatch:
@@ -6,7 +6,7 @@ on:
     paths:
       - sampleApps/python/django-app/**
       - '!.github/workflows/**'
-      - '.github/workflows/v2beta.deployPythonAppToAzureWebApp.yml'
+      - '.github/workflows/v2.deployPythonAppToAzureWebApp.yml'
     branches:
       - master
       - actions/**
@@ -17,8 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build app using Oryx v2-beta version
-      uses: Azure/appservice-build@v2-beta
+    - name: Build app using Oryx v2 version
+      uses: Azure/appservice-build@v2
       with:
         source-directory: sampleApps/python/django-app
         platform: python

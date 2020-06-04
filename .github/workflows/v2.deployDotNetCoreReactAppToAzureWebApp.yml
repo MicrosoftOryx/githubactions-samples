@@ -21,7 +21,7 @@ jobs:
       with:
         source-directory: sampleApps/multiPlatform/dotnetreact
         platform: dotnet
-        platform-version: 2.1
+        platform-version: 3.1
         output-directory: sampleApps/multiPlatform/dotnetreact/output
 
     - name: Deploy to Azure Web App

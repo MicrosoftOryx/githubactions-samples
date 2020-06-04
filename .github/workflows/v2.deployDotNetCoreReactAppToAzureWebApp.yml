@@ -4,7 +4,7 @@ on:
   repository_dispatch:
   push:
     paths:
-      - sampleApps/multiPlatform/dotnetreact/**
+      - sampleApps/multiPlatform/dotNetCoreReactApp/**
       - '!.github/workflows/**'
       - '.github/workflows/v2.deployDotNetCoreReactAppToAzureWebApp.yml'
     branches:
@@ -19,14 +19,14 @@ jobs:
     - name: Build app using Oryx v2 version
       uses: Azure/appservice-build@v2
       with:
-        source-directory: sampleApps/multiPlatform/dotnetreact
+        source-directory: sampleApps/multiPlatform/dotNetCoreReactApp
         platform: dotnet
         platform-version: 3.1
-        output-directory: sampleApps/multiPlatform/dotnetreact/output
+        output-directory: sampleApps/multiPlatform/dotNetCoreReactApp/output
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v1
       with:
         app-name: v2-dotnetcorereact-sampleapp
         publish-profile: ${{ secrets.v2DotNetCoreReactSampleApp }}
-        package: sampleApps/multiPlatform/dotnetreact/output
+        package: sampleApps/multiPlatform/dotNetCoreReactApp/output

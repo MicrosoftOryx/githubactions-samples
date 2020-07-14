@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build app using Oryx v2 version
-      uses: Azure/appservice-build@v2
+      uses: Azure/appservice-build@kichalla/fix.job.duration.logic
       with:
         source-directory: sampleApps/python/django-app
         platform: python

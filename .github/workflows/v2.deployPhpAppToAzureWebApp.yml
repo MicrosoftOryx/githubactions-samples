@@ -1,0 +1,32 @@
+name: V2_BuildAndDeploy_PhpApp_ToAzureWebApp
+
+on:
+  repository_dispatch:
+  push:
+    paths:
+      - sampleApps/php/twig-example/**
+      - '!.github/workflows/**'
+      - '.github/workflows/v2.deployPhpAppToAzureWebApp.yml'
+    branches:
+      - master
+      - actions/**
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build app using Oryx v2 version
+      uses: Azure/appservice-build@v2
+      with:
+        source-directory: sampleApps/php/twig-example
+        platform: php
+        platform-version: 7.3
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v1
+      with:
+        app-name: v2beta-php-sampleapp
+        publish-profile: ${{ secrets.v2betaPhpSampleApp }}
+        package: sampleApps/php/twig-example
